@@ -1,0 +1,70 @@
+.history-operations {
+  display: flex;
+  flex-direction: column;
+}
+.history-operations__block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.history-operations__block:not(:last-child) {
+  margin-bottom: 10px;
+}
+.history-operations__block .wrapper {
+  display: flex;
+  align-items: center;
+}
+.history-operations__block .wrapper .type {
+  margin-right: 20px;
+  cursor: default;
+}
+.history-operations__block .wrapper .type-income,
+.history-operations__block .wrapper .type-expense {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+}
+.history-operations__block .wrapper .type-income::after,
+.history-operations__block .wrapper .type-expense::after {
+  display: block;
+  position: absolute;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+}
+.history-operations__block .wrapper .type-income {
+  background-color: #17bebb;
+}
+.history-operations__block .wrapper .type-income::after {
+  content: "+";
+  left: 11.5px;
+  top: -2px;
+  bottom: 0;
+  right: 0;
+}
+.history-operations__block .wrapper .type-expense {
+  background-color: #ed6a5a;
+}
+.history-operations__block .wrapper .type-expense::after {
+  content: "–";
+  left: 12px;
+  top: -4px;
+  bottom: 0;
+  right: 0;
+}
+.history-operations__block .wrapper .info {
+  display: flex;
+  flex-direction: column;
+}
+.history-operations__block .wrapper .info-date {
+  font-size: 12px;
+}
+.history-operations__block .delete-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  justify-self: flex-end;
+}

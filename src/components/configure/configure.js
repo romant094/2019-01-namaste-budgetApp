@@ -5,12 +5,15 @@ import SectionTitle from '../common/section-title';
 function Configure() {
     return (
         <>
-            {/* <Section stitle='configure' stitle='Monthly amount' /> */}
-            <section className='configure'>
-            <SectionTitle text='Configure' />
-                <div className="section-content">
-                    <input type="text" />
-                    <button className='btn btn-primary'>Set</button>
+            <section className='section configure'>
+                <div class="container">
+                    <SectionTitle text='Configure' />
+                    <div className="section-content">
+                        <div class="data-input">
+                            <input type="text" />
+                            <button className='btn btn-primary btn-custom'>Set</button>
+                        </div>
+                    </div>
                 </div>
             </section>
         </>

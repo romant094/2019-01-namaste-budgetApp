@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+*,
+*:focus,
+*:active {
+  box-shadow: none !important;
+  outline: none !important;
+}
+body {
+  min-width: 320px;
+}
+a {
+  color: #d7dedc;
+  transition: .5s all;
+}
+a:hover {
+  color: #17bebb;
+  text-decoration: none;
+}
+.section {
+  margin: 25px auto 0;
+  padding: 30px 5%;
+  background-color: #454545;
+  max-width: 70%;
+  color: #fff;
+  border-radius: 20px;
+}
+.section-title h3 {
+  position: relative;
+}
+.section-title h3::after {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #17bebb;
+  content: "";
+  display: block;
+}
+.section-content {
+  margin-top: 30px;
+}
+.data-input {
+  display: flex;
+}
+.data-input input {
+  border-radius: 30px;
+  border: 2px solid #17bebb;
+  margin-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 200px;
+}
+.data-input button:not(:last-child) {
+  margin-right: 20px;
+}
+.btn-custom {
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.btn-primary {
+  background-color: #2ca9a6;
+  border-color: #2ca9a6;
+}
+.btn-primary:hover {
+  background-color: #17bebb;
+  border-color: #17bebb;
+}
+.btn-secondary {
+  background-color: #db786c;
+  border-color: #db786c;
+}
+.btn-secondary:hover {
+  background-color: #ed6a5a;
+  border-color: #ed6a5a;
+}
