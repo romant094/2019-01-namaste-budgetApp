@@ -9,8 +9,8 @@ class Header extends React.Component {
     render() {
         return (
             <header className='header'>
-                <div class="container">
-                    <div class="header-content">
+                <div className="container">
+                    <div className="header-content">
                         <HeaderLogo path='../../../img/logo.jpg' />
                         <HeaderNav />
                     </div>
