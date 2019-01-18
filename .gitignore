@@ -24,3 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 
 /appearance
+config/db.js
