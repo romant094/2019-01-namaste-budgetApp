@@ -1,14 +1,14 @@
-const express = require('express');
-const MongoClient = require('mongodb').MongoClient;
-const bodyParser = require('body-parser');
-const db = require('./config/db');
+const express = require('express'),
+    MongoClient = require('mongodb').MongoClient,
+    bodyParser = require('body-parser'),
+    db = require('./config/db'),
+    cors = require('cors'),
+    app = express(),
+    port = 8000;
 
-const app = express();
-
-const port = 8000;
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors());
 
 MongoClient.connect(db.url, (err, database) => {
     if (err) return console.log(err)
@@ -17,4 +17,4 @@ MongoClient.connect(db.url, (err, database) => {
     app.listen(port, () => {
         console.log('We are alive on ' + port);
     });
-}) 
+})

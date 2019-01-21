@@ -1,33 +1,47 @@
 module.exports = function (app, db) {
     app.post('/transaction', (req, res) => {
-        const note = { type: req.body.type, sum: req.body.sum, date: req.body.date };
-        db.collection('transactions').insert(note, (err, result) => {
+        const data = { type: req.body.type, sum: req.body.sum, date: req.body.date };
+        db.collection('transactions').insert(data, (err, result) => {
             if (err) {
-                res.send({ 'error': 'An error has occurred' });
+                res.json({ 'Error': 'An error has occurred' });
             } else {
-                res.send('Success');
+                res.json(req.body);
             }
         });
     });
 
-    app.get('/test', (req, res) => {
-        res.json('Test completed!');
-    });
-
     app.get('/transactions', (req, res) => {
-        const transactions = db.collection('transactions').find();
-        console.log(transactions);
+        db.collection('transactions').find().toArray(function (err, items) {
+            res.json(items);
+        });
     });
 
-    // app.get('/notes/:id', (req, res) => {
-    //     const id = req.params.id;
-    //     const details = { '_id': new ObjectID(id) };
-    //     db.collection('notes').findOne(details, (err, item) => {
-    //         if (err) {
-    //             res.send({ 'error': 'An error has occurred' });
-    //         } else {
-    //             res.send(item);
-    //         }
-    //     });
-    // });
+    app.post('/budget', (req, res) => {
+        const data = { budget: req.body.budget };
+        db.collection('configure').insert(data, (err, result) => {
+            if (err) {
+                res.json({ 'Error': 'An error has occurred' });
+            } else {
+                res.json(req.body);
+            }
+        });
+    });
+
+    app.delete('/budget', (req, res) => {
+        db.collection('configure').remove({}, (err, result) => {
+            if (err) {
+                res.json({ 'error': 'An error has occurred' });
+            } else {
+                res.json('Budget cleared!');
+            }
+        });
+    });
+
+    app.get('/budget', (req, res) => {
+        const budget = db.collection('configure').find();
+        // console.log(res);
+        res.send(res.data);
+    });
+
+
 };

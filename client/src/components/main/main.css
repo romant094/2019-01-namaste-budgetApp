@@ -9,6 +9,8 @@
 }
 .history-operations__block:not(:last-child) {
   margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
 }
 .history-operations__block .wrapper {
   display: flex;
