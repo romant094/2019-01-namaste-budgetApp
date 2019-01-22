@@ -24,14 +24,6 @@ module.exports = function (app, db) {
         db.collection('transactions').update(
             { _id: id }, { $set: {isDeleted: 1} }
         );
-            
-        // db.collection('transactions').remove(details, (err, result) => {
-        //     if (err) {
-        //         res.send({ 'error': 'An error has occurred' });
-        //     } else {
-        //         res.send('Transaction ' + id + ' deleted!');
-        //     }
-        // });
     });
 
     app.post('/budget', (req, res) => {
