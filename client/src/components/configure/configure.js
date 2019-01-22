@@ -27,7 +27,6 @@ class Configure extends React.Component {
                                     action='set'
                                     fieldID='budget'
                                 />
-                                {/* <button className='btn btn-primary btn-custom' onClick={this.btnClick}>Set</button> */}
                             </div>
                         </div>
                     </div>
